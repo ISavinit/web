@@ -64,6 +64,7 @@ db.sqlite3-journal
 # Flask stuff:
 instance/
 .webassets-cache
+.config
 
 # Scrapy stuff:
 .scrapy
@@ -130,3 +131,4 @@ dmypy.json
 
 # Ides
 .idea
+
