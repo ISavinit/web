@@ -2,11 +2,15 @@ from flask import Flask, render_template
 
 from webapp.python_org_news import get_python_news
 from webapp.weather import weather_by_city
+from webapp.model import db
 
 
 def create_app():
     app = Flask(__name__)
     app.config.from_pyfile('config.py')
+    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///webapp_db"
+    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+    db.init_app(app)
 
     @app.route('/')
     def index():
